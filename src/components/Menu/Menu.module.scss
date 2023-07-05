@@ -1,0 +1,28 @@
+.menu {
+	width: 252px;
+	height: calc(100vh - 60px);
+	color: var(--neutral-light-60);
+	padding-top: 43px;
+
+	.button {
+		margin-bottom: 24px;
+		margin-left: 64px;
+		cursor: pointer;
+
+		& > p {
+			display: flex;
+			align-items: center;
+			font-size: 14px;
+		}
+
+		.blogs::before {
+			content: url('../../assets/images/svg/list.svg');
+			margin-right: 12px;
+		}
+
+		.posts::before {
+			content: url('../../assets/images/svg/grid_view.svg');
+			margin-right: 12px;
+		}
+	}
+}
