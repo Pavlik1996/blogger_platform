@@ -1,0 +1,17 @@
+@import "src/styles/mixins";
+
+.notification {
+  width: 378px;
+  @include flex-center-column;
+  padding: 30px 21px;
+  row-gap: 18px;
+
+  > span {
+    @include text(16px, 400, 24px);
+  }
+
+  .btn {
+    width: 124px;
+    align-self: end;
+  }
+}

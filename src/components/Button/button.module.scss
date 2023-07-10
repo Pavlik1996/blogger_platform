@@ -1,0 +1,126 @@
+.btn {
+	padding: 6px 28px;
+	font-weight: var(--font-size-m);
+	border: none;
+	border-radius: 4px;
+}
+
+.btn:hover {
+	cursor: pointer;
+}
+
+.primary {
+	background-color: var(--color-accent-700);
+	box-shadow: 0 4px 18px 0 rgba(248, 52, 107, 0.35),
+		0 1px 0 0 rgba(255, 255, 255, 0.3) inset;
+	color: var(--neutral-light-60);
+	font-size: 14px;
+
+	&:active {
+		background-color: var(--color-accent-700);
+	}
+
+	&:hover {
+		background-color: var(--color-accent-500);
+	}
+
+	&:focus {
+		box-sizing: border-box;
+		outline: 1px solid var(--color-accent-500);
+	}
+
+	&:disabled {
+		cursor: auto;
+		color: var(--color-light-900);
+		background-color: var(--color-accent-900);
+		box-shadow: none;
+	}
+}
+
+.witchIcon {
+	display: flex;
+	gap: 0.625rem;
+	align-items: center;
+	justify-content: center;
+}
+
+.icon {
+	width: 1rem;
+	height: 1rem;
+}
+
+.secondary {
+	background-color: var(--color-dark-300);
+	box-shadow: 0 2px 10px 0 rgb(109 109 109 / 25%);
+
+	&:active {
+		background-color: var(--color-dark-500);
+	}
+
+	&:hover {
+		background-color: var(--color-dark-100);
+	}
+
+	&:focus {
+		box-sizing: border-box;
+		outline: 2px solid var(--color-info-700);
+	}
+
+	&:disabled {
+		cursor: auto;
+		color: var(--color-light-900);
+		background-color: var(--color-dark-300);
+		box-shadow: none;
+	}
+}
+
+.tertiary {
+	color: var(--color-accent-500);
+	background-color: var(--color-dark-900);
+	outline: 2px solid var(--color-accent-500);
+
+	&:active {
+		background-color: var(--color-accent-900);
+	}
+
+	&:hover {
+		background-color: var(--color-accent-900);
+	}
+
+	&:focus {
+		box-sizing: border-box;
+		outline: 2px solid var(--color-info-700);
+	}
+
+	&:disabled {
+		cursor: auto;
+
+		color: var(--color-accent-900);
+
+		background-color: var(--color-dark-900);
+		outline: 2px solid var(--color-accent-900);
+		box-shadow: none;
+	}
+}
+
+.link {
+	cursor: pointer;
+	padding: 6px 0;
+	font-weight: var(--font-size-m);
+	color: var(--color-accent-500);
+
+	//&:active {
+	//	gap: 0.625rem;
+	//	color: var(--color-accent-700);
+	//	border-radius: 25%;
+	//	outline: 1px solid var(--color-info-700);
+	//}
+
+	&:hover {
+		color: var(--color-accent-300);
+	}
+}
+
+.fullWidth {
+	width: 100%;
+}
