@@ -54,7 +54,7 @@
 
   .error {
     height: 24px;
-    @include text(14px, 400, 24px, var(var(--color-danger-500)));
+    @include text(14px, 500, 24px, var(--color-danger-500));
   }
 }
 

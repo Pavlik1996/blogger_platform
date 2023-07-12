@@ -1,5 +1,5 @@
 .btn {
-	padding: 6px 28px;
+	padding: 6px 36px;
 	font-weight: var(--font-size-m);
 	border: none;
 	border-radius: 4px;
@@ -15,6 +15,7 @@
 		0 1px 0 0 rgba(255, 255, 255, 0.3) inset;
 	color: var(--neutral-light-60);
 	font-size: 14px;
+	text-decoration: none;
 
 	&:active {
 		background-color: var(--color-accent-700);
@@ -34,6 +35,9 @@
 		color: var(--color-light-900);
 		background-color: var(--color-accent-900);
 		box-shadow: none;
+	}
+	&:visited {
+		color: var(--neutral-light-60);
 	}
 }
 
@@ -109,12 +113,12 @@
 	font-weight: var(--font-size-m);
 	color: var(--color-accent-500);
 
-	//&:active {
-	//	gap: 0.625rem;
-	//	color: var(--color-accent-700);
-	//	border-radius: 25%;
-	//	outline: 1px solid var(--color-info-700);
-	//}
+	&:active {
+		gap: 0.625rem;
+		color: var(--color-accent-700);
+		border-radius: 25%;
+		outline: 1px solid var(--color-info-700);
+	}
 
 	&:hover {
 		color: var(--color-accent-300);

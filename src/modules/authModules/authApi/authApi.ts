@@ -20,3 +20,7 @@ export const authApi = createApi({
 })
 
 export const { useRegistrationMutation } = authApi
+
+
+// https://blog-platform-for-guild.vercel.app/ - new
+// baseUrl: 'https://back-samurai.vercel.app/api/', - old

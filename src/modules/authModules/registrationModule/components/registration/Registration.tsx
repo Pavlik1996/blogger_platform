@@ -8,6 +8,7 @@ import { useRegistrationMutation } from '../../../authApi/authApi.ts'
 import { Input } from '../../../../../components/Input/Input.tsx'
 import { useState } from 'react'
 import { ModalSignUp } from '../ModalSingUp/ModalSignUp.tsx'
+import { Link } from 'react-router-dom'
 
 export type RegistrationPostType = {
 	login: string
@@ -18,7 +19,7 @@ export type RegistrationPostType = {
 export const Registration = () => {
 	const [email, setEmail] = useState('')
 	const [isActiveModal, setIsActiveModal] = useState(false)
-	const [registration, { isLoading }] = useRegistrationMutation()
+	const [registration, { isLoading, isSuccess }] = useRegistrationMutation()
 
 	const schema = yup.object().shape({
 		login: yup.string().required('').min(5, 'min 5 symbols'),
@@ -39,32 +40,36 @@ export const Registration = () => {
 	})
 
 	const onSubmit: SubmitHandler<RegistrationPostType> = async (data) => {
-		console.log(data)
 		setEmail(data.email)
 		await registration(data)
-		setIsActiveModal(true)
+		isSuccess && setIsActiveModal(true)
 	}
+
 
 	return (
 		<div className={s.wrapper}>
 			<div className={s.card}>
 				<form onSubmit={handleSubmit(onSubmit)}>
-					<p className={s.headerText}>Sing Up</p>
-					<div className={s.blockInput}>
-						<Input register={register} name={'login'} title={'Username'} error={errors.login?.message || ''} />
-						<Input register={register} name={'email'} title={'Email'} error={errors.email?.message || ''} />
-						<Input register={register} name={'password'} title={'Password'} error={errors.password?.message || ''}
-									 password />
+					<span className={s.headerText}>Sing Up</span>
+					<Input register={register} name={'login'} title={'Username'} error={errors.login?.message || ''} />
+					<Input register={register} name={'email'} title={'Email'} error={errors.email?.message || ''} />
+					<Input register={register} name={'password'} title={'Password'} error={errors.password?.message || ''}
+								 password />
+					<div className={s.success}>
+						{
+							isSuccess && 'The link has been sent by email. ' +
+							'If you don’t receive an email, send link again'
+						}
 					</div>
 					<Button variant={'primary'} type={'submit'} fullWidth disabled={isLoading}>
 						Sing Up
 					</Button>
 				</form>
 				<div className={s.footer}>
-					<p className={s.footer_text}>Already a member?</p>
-					<Button variant={'link'} as={'a'} className={s.btn_sign_in}>
+					<span className={s.footer_text}>Already a member?</span>
+					<Link className={s.btn_sign_in} to={'/login'}>
 						Sign In
-					</Button>
+					</Link>
 				</div>
 			</div>
 			<img src={imageRegistration} alt='image-registration' className={s.image} />

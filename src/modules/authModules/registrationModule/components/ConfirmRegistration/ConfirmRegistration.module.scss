@@ -1,0 +1,17 @@
+@import "src/styles/mixins";
+
+.wrapper {
+  height: calc(100vh - 60px);
+  width: 1280px;
+  @include flex-column;
+  align-items: center;
+
+  & > span {
+    text-align: center;
+    color: var(--neutral-dark-60);
+    font-size: var(--font-size-l);
+    font-weight: 500;
+    margin-top: 65px;
+    margin-bottom: 55px;
+  }
+}
